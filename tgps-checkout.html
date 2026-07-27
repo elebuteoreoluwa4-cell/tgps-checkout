@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ghostwriting Profit System — Get Instant Access</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0A0F0D;
+    --bg-panel: #0F1613;
+    --line: #22302A;
+    --gold: #D4A857;
+    --gold-bright: #E8C578;
+    --sage: #5FA88A;
+    --cream: #F2EFE6;
+    --muted: #93A39A;
+    --maroon-text: #241407;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 92px; /* room for sticky CTA */
+  }
+  .wrap{ max-width: 640px; margin: 0 auto; }
+
+  /* Countdown bar */
+  .countdown-bar{
+    background: linear-gradient(180deg, #0D1512 0%, #0A0F0D 100%);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 20px 22px;
+    text-align: center;
+  }
+  .eyebrow{
+    font-family: 'Inter', monospace;
+    letter-spacing: 0.25em;
+    font-size: 11px;
+    color: var(--sage);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .countdown-clock{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 0.04em;
+    color: var(--gold-bright);
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown-clock span{ color: var(--muted); font-size: 20px; font-family:'Inter',sans-serif; }
+
+  /* Hero */
+  .hero{ padding: 44px 24px 8px; text-align:center; }
+  .hero h1{
+    font-family: 'Instrument Serif', serif;
+    font-size: 40px;
+    line-height: 1.12;
+    font-weight: 400;
+  }
+  .hero p{
+    color: var(--muted);
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .hero strike{ color: var(--muted); opacity: 0.7; }
+
+  .price-block{ text-align:center; padding: 28px 24px 8px; }
+  .price-old{
+    font-family:'Bebas Neue',sans-serif;
+    font-size: 26px;
+    color: var(--muted);
+    text-decoration: line-through;
+    letter-spacing: 0.03em;
+  }
+  .price-new{
+    font-family:'Bebas Neue',sans-serif;
+    font-size: 68px;
+    color: var(--gold-bright);
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 24px rgba(212,168,87,0.25);
+  }
+  .price-caption{
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  .cta-btn{
+    display:block;
+    width: calc(100% - 48px);
+    margin: 22px auto 0;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    color: var(--maroon-text);
+    font-weight: 700;
+    font-size: 17px;
+    text-align:center;
+    padding: 18px 20px;
+    border-radius: 14px;
+    text-decoration:none;
+    box-shadow: 0 0 30px rgba(212,168,87,0.25);
+  }
+  .cta-sub{
+    text-align:center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  hr.divider{ border:none; border-top:1px solid var(--line); margin: 36px 24px; }
+
+  /* Stats */
+  .stats{ padding: 0 24px; }
+  .stat-card{
+    background: var(--cream);
+    color: #16211B;
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .stat-num{ font-family:'Bebas Neue',sans-serif; font-size: 34px; letter-spacing:0.02em; }
+  .stat-label{ font-size: 13px; color:#4B5A52; margin-top:4px; }
+  .stats-caption{
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .stats-caption b{ color: var(--gold-bright); font-weight:600; }
+
+  /* Section titles */
+  .section-title{
+    font-family:'Instrument Serif', serif;
+    font-size: 32px;
+    text-align:center;
+    padding: 0 24px;
+  }
+  .section-sub{
+    text-align:center;
+    color: var(--muted);
+    font-size: 15px;
+    padding: 12px 32px 0;
+    line-height:1.5;
+  }
+
+  /* Testimonial cards */
+  .testimonials{ padding: 28px 24px 0; display:flex; flex-direction:column; gap:16px; }
+  .t-card{
+    background: #F5F1E8;
+    color: #2A2420;
+    border-radius: 16px;
+    padding: 18px 18px 16px;
+    font-size: 15px;
+    line-height:1.5;
+    position: relative;
+  }
+  .t-name{ font-weight:700; font-size:14px; margin-bottom:6px; color:#1B2620; }
+  .t-highlight{ color: #8A6A1E; font-weight:700; }
+  .t-caption{
+    color: var(--sage);
+    font-size: 14px;
+    margin-top: -2px;
+    padding-left: 4px;
+  }
+  .t-caption b{ color: var(--gold-bright); }
+  .t-shot{
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+  }
+
+  /* Package list */
+  .package{
+    margin: 30px 24px 0;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 22px;
+    background: var(--bg-panel);
+  }
+  .package-eyebrow{
+    text-align:center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .package-item{
+    display:flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .package-item:last-of-type{ border-bottom:none; }
+  .check{ color: var(--sage); font-weight:700; flex-shrink:0; }
+  .package-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--gold);
+  }
+  .package-total .label{ color: var(--gold-bright); font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.03em;}
+  .package-total .value{ color: var(--gold-bright); font-family:'Bebas Neue',sans-serif; font-size:26px; text-decoration:line-through; opacity:0.85; }
+
+  /* Sticky bottom CTA */
+  .sticky-cta{
+    position: fixed;
+    bottom: 0; left:0; right:0;
+    background: rgba(10,15,13,0.96);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid var(--line);
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .sticky-cta a{
+    width:100%;
+    max-width: 600px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background: #25D366;
+    color:#08170F;
+    font-weight:700;
+    font-size:15px;
+    padding: 14px;
+    border-radius: 12px;
+    text-decoration:none;
+  }
+
+  .contact-line{
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+    padding: 16px 24px 40px;
+  }
+  .contact-line a{ color: var(--gold-bright); text-decoration:none; }
+
+  .bank-card{
+    max-width: 640px;
+    margin: 22px 24px 0;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .bank-card .bank-title{
+    color: var(--muted);
+    font-size: 13px;
+    text-align:center;
+    margin-bottom: 12px;
+  }
+  .bank-row{
+    display:flex;
+    justify-content:space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .bank-row:last-child{ border-bottom:none; }
+  .bank-row .k{ color: var(--muted); }
+  .bank-row .v{ color: var(--cream); font-weight:600; }
+
+  .placeholder-note{
+    max-width:640px;
+    margin: 0 auto 0;
+    background:#3A2C10;
+    color:#F0D9A0;
+    font-size:12px;
+    text-align:center;
+    padding:8px 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="countdown-bar">
+    <div class="eyebrow">Your opening price ends in</div>
+    <div class="countdown-clock" id="clock">--:--:--</div>
+  </div>
+
+  <div class="hero">
+    <h1>The clock's still running.</h1>
+    <p>Lock in <strike>₦45,000</strike> now. Once the timer above hits zero, it goes to <strike>₦60,000</strike>.</p>
+  </div>
+
+  <div class="price-block">
+    <div class="price-old">₦60,000</div>
+    <div class="price-new">₦45,000</div>
+  </div>
+
+  <a class="cta-btn" href="https://nestuge.com/qo5uez9qq">Pay ₦45,000 &amp; Get Instant Access</a>
+  <div class="cta-sub">Having trouble paying? Message me directly and I'll sort you out.</div>
+
+  <hr class="divider">
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num">1,000+</div>
+      <div class="stat-label">No. of students</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">$50,000+</div>
+      <div class="stat-label">Total volume made by students</div>
+    </div>
+    <div class="stats-caption"><b>1,000+ students</b> have gone through TGPS and put it to work.</div>
+  </div>
+
+  <div class="section-title" style="margin-top:44px;">The receipts</div>
+  <div class="section-sub">What students pulled in after doing the work.</div>
+
+  <div class="testimonials">
+    <img class="t-shot" src="assets/testimonial-1.jpeg" alt="Student testimonial screenshot">
+    <img class="t-shot" src="assets/testimonial-2.jpeg" alt="Student testimonial screenshot">
+    <img class="t-shot" src="assets/testimonial-3.jpeg" alt="Student testimonial screenshot">
+  </div>
+
+  <div class="section-title" style="margin-top:48px;">My promise to you</div>
+  <div class="section-sub">Do the work. Land your first client. Follow the training and put it into action — if you don't make it back, message me.</div>
+
+  <div class="package" id="checkout">
+    <div class="package-eyebrow">for the first 15 people in.</div>
+
+    <div class="package-item"><span class="check">✔</span> The complete 20-stage Ghostwriting Profit System</div>
+    <div class="package-item"><span class="check">✔</span> 30-Day Fast-Start Action Plan</div>
+    <div class="package-item"><span class="check">✔</span> Done-for-You Client Pitch Templates</div>
+    <div class="package-item"><span class="check">✔</span> AI Prompts Blueprint for Ghostwriting</div>
+    <div class="package-item"><span class="check">✔</span> Private 30-Min Strategy Session with me</div>
+    <div class="package-item"><span class="check">✔</span> Private Telegram Community Access</div>
+
+    <div class="package-total">
+      <span class="label">Total value</span>
+      <span class="value">$1,400</span>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:26px;">
+    <a class="cta-btn" style="width:auto; display:inline-block; padding:18px 40px;" href="https://nestuge.com/qo5uez9qq">Pay ₦45,000 &amp; Get Instant Access</a>
+    <div class="cta-sub">Instant access. Naira or dollars accepted.</div>
+  </div>
+
+  <div class="bank-card">
+    <div class="bank-title">Prefer to pay manually? Transfer to:</div>
+    <div class="bank-row"><span class="k">Bank</span><span class="v">Moniepoint</span></div>
+    <div class="bank-row"><span class="k">Account Number</span><span class="v">8143062192</span></div>
+    <div class="bank-row"><span class="k">Account Name</span><span class="v">Elebute Oreoluwa Faith</span></div>
+  </div>
+
+  <div class="contact-line">
+    Prefer to chat first? <a href="https://wa.me/2348143062192" target="_blank">Message me on WhatsApp</a><br>
+    or call / text +234 814 306 2192
+  </div>
+
+</div>
+
+<div class="sticky-cta">
+  <a href="https://wa.me/2348143062192" target="_blank">💬 Chat with me on WhatsApp</a>
+</div>
+
+<script>
+  // Set this to your real deadline (ISO string). Countdown resets per visitor on load if you leave it relative.
+  const DEADLINE = Date.now() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000); // ⚡ default: ~24h from page load — replace with a fixed Date if you want a shared global deadline
+
+  const clockEl = document.getElementById('clock');
+  function tick(){
+    const now = Date.now();
+    let diff = DEADLINE - now;
+    if(diff <= 0){
+      clockEl.textContent = "00:00:00";
+      document.querySelector('.eyebrow').textContent = "Opening price has ended";
+      return;
+    }
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    clockEl.innerHTML = String(h).padStart(2,'0') + '<span>:</span>' + String(m).padStart(2,'0') + '<span>:</span>' + String(s).padStart(2,'0');
+    requestAnimationFrame(() => setTimeout(tick, 250));
+  }
+  tick();
+</script>
+
+</body>
+</html>
